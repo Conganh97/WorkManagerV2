@@ -1,17 +1,19 @@
-package Model;
+package Model.Work;
 
+
+import Model.WorkItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductBackLog extends WorkItem{
+public class ProductBackLog extends WorkItem {
     private int idProductBackLog;
     private List<Feature> featureList;
-    private static int incrementId = 0;
-    public ProductBackLog(String creator, String code, String name,
+
+    public ProductBackLog(int id, String creator, String code, String name,
                           String description, Status status) {
         super(creator, code, name, description, status);
-        this.idProductBackLog = incrementId++;
+        this.idProductBackLog = id;
         this.featureList = new ArrayList<>();
     }
 

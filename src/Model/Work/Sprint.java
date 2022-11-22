@@ -1,26 +1,28 @@
-package Model;
+package Model.Work;
+
+import Model.WorkItem;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Sprint extends WorkItem{
+public class Sprint extends WorkItem {
     private int idSprint;
     private Date dateStart;
     private Date dateEnd;
     private List<Feature> featureList;
     private List<Task> taskList;
-    private static int incrementId = 0;
 
-    public Sprint(String creator, String code, String name, String description,
+    public Sprint(int id, String creator, String code, String name, String description,
                   Status status, Date dateStart, Date dateEnd) {
         super(creator, code, name, description, status);
-        this.idSprint = incrementId++;
+        this.idSprint = id;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
         this.featureList = new ArrayList<>();
         this.taskList = new ArrayList<>();
     }
+
 
     public int getIdSprint() {
         return idSprint;

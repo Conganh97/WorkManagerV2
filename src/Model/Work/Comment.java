@@ -1,4 +1,7 @@
-package Model;
+package Model.Work;
+
+import Model.GeneralInformation;
+import Model.User.User;
 
 public class Comment extends GeneralInformation {
     private int idComment;
@@ -6,14 +9,14 @@ public class Comment extends GeneralInformation {
     private User userComment;
 
     private String content;
-    private static int incrementId = 0;
 
-    public Comment(String creator, User userComment, String content) {
+    public Comment(int id, String creator, User userComment, String content) {
         super(creator);
-        this.idComment = incrementId++;
+        this.idComment = id;
         this.userComment = userComment;
         this.content = content;
     }
+
 
     public int getIdComment() {
         return idComment;

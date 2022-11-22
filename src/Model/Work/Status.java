@@ -1,4 +1,4 @@
-package Model;
+package Model.Work;
 
 public class Status {
     private int idStatus;
@@ -7,11 +7,9 @@ public class Status {
 
     private String nameClass;
 
-    private static int incrementId = 0;
 
-
-    public Status(String name, String nameClass) {
-        this.idStatus = incrementId++;
+    public Status(int id, String name, String nameClass) {
+        this.idStatus = id;
         this.name = name;
         this.nameClass = nameClass;
     }
@@ -40,11 +38,4 @@ public class Status {
         this.nameClass = nameClass;
     }
 
-    public static int getIncrementId() {
-        return incrementId;
-    }
-
-    public static void setIncrementId(int incrementId) {
-        Status.incrementId = incrementId;
-    }
 }

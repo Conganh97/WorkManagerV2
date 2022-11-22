@@ -1,19 +1,27 @@
-package Model;
+package Model.Work;
 
-import java.util.Date;
+import Model.WorkItem;
 
-public class Feature extends WorkItem{
+public class Feature extends WorkItem {
     private int idFeature;
     private int priority;
     private String acceptanceCriteria;
-    private static int incrementId = 0;
 
-    public Feature(String creator, String code, String name, String description,
+
+    public Feature(int id, String creator, String code, String name, String description,
                    Status status, int priority, String acceptanceCriteria) {
         super(creator, code, name, description, status);
-        this.idFeature = incrementId++;
+        this.idFeature = id;
         this.priority = priority;
         this.acceptanceCriteria = acceptanceCriteria;
+    }
+
+    public int getIdFeature() {
+        return idFeature;
+    }
+
+    public void setIdFeature(int idFeature) {
+        this.idFeature = idFeature;
     }
 
     public int getPriority() {

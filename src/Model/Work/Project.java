@@ -1,24 +1,28 @@
-package Model;
+package Model.Work;
+
+import Model.GeneralInformation;
+import Model.User.Team;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Project extends GeneralInformation{
+public class Project extends GeneralInformation {
     private int idProject;
     private String nameProject;
     private String aboutProject;
     private ProductBackLog productBackLog;
     private Team team;
     private List<Sprint> sprintList;
-    private static int incrementId = 0;
 
-    public Project(String creator, String nameProject, String aboutProject) {
+
+    public Project(int id, String creator, String nameProject, String aboutProject) {
         super(creator);
-        this.idProject = incrementId++;
+        this.idProject = id;
         this.nameProject = nameProject;
         this.aboutProject = aboutProject;
         this.sprintList = new ArrayList<>();
     }
+
 
     public int getIdProject() {
         return idProject;

@@ -1,15 +1,11 @@
-package Model;
+package Model.User;
 
 public class Role {
     private int idRole;
 
     private String roleName;
 
-    private static int incrementId = 0;
-
-
-    public Role(String roleName) {
-        this.idRole = incrementId++;
+    public Role(int id, String roleName) {
         this.roleName = roleName;
     }
 
@@ -36,11 +32,4 @@ public class Role {
         this.roleName = roleName;
     }
 
-    public static int getIncrementId() {
-        return incrementId;
-    }
-
-    public static void setIncrementId(int incrementId) {
-        Role.incrementId = incrementId;
-    }
 }

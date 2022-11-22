@@ -1,4 +1,7 @@
-package Model;
+package Model.User;
+
+import Model.GeneralInformation;
+import Model.User.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +11,10 @@ public class Team extends GeneralInformation {
     private String teamName;
 
     private List<User> userList;
-    private static int incrementId = 0;
 
-    public Team(String creator, String teamName) {
+    public Team(int id, String creator, String teamName) {
         super(creator);
-        this.id = incrementId++;
+        this.id = id;
         this.teamName = teamName;
         this.userList = new ArrayList<>();
     }

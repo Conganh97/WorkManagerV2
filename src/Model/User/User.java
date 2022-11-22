@@ -1,9 +1,9 @@
-package Model;
+package Model.User;
 
 
-import java.util.ArrayList;
+import Model.GeneralInformation;
+
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class User extends GeneralInformation {
@@ -13,22 +13,32 @@ public class User extends GeneralInformation {
     private String password;
     private String email;
     private String phone;
-    private Set<Role> roleList;
-    private static int incrementId = 0;
 
-    public User(String creator, String name, String userName,
+    private boolean statusUser;
+    private Set<Role> roleList;
+
+    public User(int id, String creator, String name, String userName,
                 String password, String email, String phone) {
         super(creator);
-        this.id = incrementId++;
+        this.idUser = id;
         this.name = name;
         this.userName = userName;
         this.password = password;
+        this.statusUser = true;
         this.email = email;
         this.phone = phone;
         this.roleList = new HashSet<>();
     }
 
     public User() {
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public String getName() {
@@ -77,5 +87,13 @@ public class User extends GeneralInformation {
 
     public void setRoleList(Set<Role> roleList) {
         this.roleList = roleList;
+    }
+
+    public boolean isStatusUser() {
+        return statusUser;
+    }
+
+    public void setStatusUser(boolean statusUser) {
+        this.statusUser = statusUser;
     }
 }

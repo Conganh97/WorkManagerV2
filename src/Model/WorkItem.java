@@ -1,5 +1,9 @@
 package Model;
 
+import Model.User.User;
+import Model.Work.Comment;
+import Model.Work.Status;
+
 import java.util.ArrayList;
 import java.util.List;
 
