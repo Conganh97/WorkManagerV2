@@ -2,46 +2,34 @@ package Model;
 
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ProductBackLog extends WorkItem{
-
-    private Date targetDate;
-
-    private List<Task> taskList;
-
-    private Team team;
-
+    private int idProductBackLog;
+    private List<Feature> featureList;
+    private static int incrementId = 0;
     public ProductBackLog(String creator, String code, String name,
-                          String description, Status status, Date targetDate, Team team) {
+                          String description, Status status) {
         super(creator, code, name, description, status);
-        this.targetDate = targetDate;
-        this.taskList = new ArrayList<>();
-        this.team = team;
+        this.idProductBackLog = incrementId++;
+        this.featureList = new ArrayList<>();
     }
 
-    public Date getTargetDate() {
-        return targetDate;
+
+    public List<Feature> getFeatureList() {
+        return featureList;
     }
 
-    public void setTargetDate(Date targetDate) {
-        this.targetDate = targetDate;
+    public void setFeatureList(List<Feature> featureList) {
+        this.featureList = featureList;
     }
 
-    public List<Task> getTaskList() {
-        return taskList;
+    public int getIdProductBackLog() {
+        return idProductBackLog;
     }
 
-    public void setTaskList(List<Task> taskList) {
-        this.taskList = taskList;
+    public void setIdProductBackLog(int idProductBackLog) {
+        this.idProductBackLog = idProductBackLog;
     }
 
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
-    }
 }

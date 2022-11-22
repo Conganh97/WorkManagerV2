@@ -4,15 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WorkItem extends GeneralInformation {
-    private String code;
-
-    private String name;
-
-    private String description;
-
-    private Status status;
-
-    private List<Comment> commentList;
+    public String code;
+    public String name;
+    public String description;
+    public Status status;
+    public User worker;
+    public List<Comment> commentList;
 
     public WorkItem(String creator, String code, String name, String description, Status status) {
         super(creator);
@@ -21,6 +18,9 @@ public class WorkItem extends GeneralInformation {
         this.description = description;
         this.status = status;
         this.commentList = new ArrayList<>();
+    }
+
+    public WorkItem() {
     }
 
     public String getCode() {
@@ -62,4 +62,13 @@ public class WorkItem extends GeneralInformation {
     public void setCommentList(List<Comment> commentList) {
         this.commentList = commentList;
     }
+
+    public User getWorker() {
+        return worker;
+    }
+
+    public void setWorker(User worker) {
+        this.worker = worker;
+    }
+
 }

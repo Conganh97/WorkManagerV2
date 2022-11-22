@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Team extends GeneralInformation {
+    private int idTeam;
     private String teamName;
 
     private List<User> userList;
+    private static int incrementId = 0;
 
     public Team(String creator, String teamName) {
         super(creator);
+        this.id = incrementId++;
         this.teamName = teamName;
         this.userList = new ArrayList<>();
     }

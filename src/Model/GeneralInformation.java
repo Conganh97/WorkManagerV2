@@ -19,6 +19,9 @@ public class  GeneralInformation {
         this.creator = creator;
     }
 
+    public GeneralInformation() {
+    }
+
     public int getId() {
         return id;
     }

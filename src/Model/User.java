@@ -2,30 +2,33 @@ package Model;
 
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class User extends GeneralInformation {
-
+    private int idUser;
     private String name;
-
     private String userName;
-
     private String password;
-
     private String email;
-
     private String phone;
+    private Set<Role> roleList;
+    private static int incrementId = 0;
 
-    private List<Role> roleList;
-
-    public User(String creator, String name, String userName, String password, String email, String phone) {
+    public User(String creator, String name, String userName,
+                String password, String email, String phone) {
         super(creator);
+        this.id = incrementId++;
         this.name = name;
         this.userName = userName;
         this.password = password;
         this.email = email;
         this.phone = phone;
-        this.roleList = new ArrayList<>();
+        this.roleList = new HashSet<>();
+    }
+
+    public User() {
     }
 
     public String getName() {
@@ -68,11 +71,11 @@ public class User extends GeneralInformation {
         this.phone = phone;
     }
 
-    public List<Role> getRoleList() {
+    public Set<Role> getRoleList() {
         return roleList;
     }
 
-    public void setRoleList(List<Role> roleList) {
+    public void setRoleList(Set<Role> roleList) {
         this.roleList = roleList;
     }
 }
